@@ -242,8 +242,8 @@ param_grid = {
 }
 
 pca = PCA()
-nb = KNN(n_jobs=None)
-pipe = Pipeline(steps=[("PCA", pca), ("KNN", nb)])
+knn = KNN(n_jobs=None)
+pipe = Pipeline(steps=[("PCA", pca), ("KNN", knn)])
 
 clf = GridSearchCV(pipe, param_grid)
 clf.fit(features_train, labels_train)
